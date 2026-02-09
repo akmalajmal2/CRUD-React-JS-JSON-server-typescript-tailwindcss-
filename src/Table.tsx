@@ -22,12 +22,14 @@ const Table: React.FC<TableProps> = ({ userList = [], editData, onDelete }) => {
     { id: 101, name: "Delete" },
   ];
   return (
-    <table>
-      <thead>
+    <table className="w-full border border-gray-300 border-collapse rounded-lg overflow-hidden">
+      <thead className="bg-indigo-500 text-white">
         <tr>
           {headings.length > 0 &&
             headingsWithButtons.map((heading) => (
-              <th key={heading.id}>{heading?.name}</th>
+              <th className="p-3 text-left" key={heading.id}>
+                {heading?.name}
+              </th>
             ))}
         </tr>
       </thead>
@@ -35,15 +37,21 @@ const Table: React.FC<TableProps> = ({ userList = [], editData, onDelete }) => {
         {userList.length > 0 &&
           userList.map((user: UserProps, index: number) => (
             <tr key={user.id}>
-              <td>{index + 1}</td>
-              <td>{user.firstName}</td>
-              <td>{user.lastName}</td>
-              <td>{user.mobile}</td>
-              <td>{user.email}</td>
-              <td onClick={() => editData(user)}>
+              <td className="p-3 border border-gray-200">{index + 1}</td>
+              <td className="p-3 border border-gray-200">{user.firstName}</td>
+              <td className="p-3 border border-gray-200">{user.lastName}</td>
+              <td className="p-3 border border-gray-200">{user.mobile}</td>
+              <td className="p-3 border border-gray-200">{user.email}</td>
+              <td
+                className="p-3 border border-gray-200"
+                onClick={() => editData(user)}
+              >
                 <button>Edit</button>
               </td>
-              <td onClick={() => onDelete(user.id as string)}>
+              <td
+                className="p-3 border border-gray-200"
+                onClick={() => onDelete(user.id as string)}
+              >
                 <button>Delete</button>
               </td>
             </tr>

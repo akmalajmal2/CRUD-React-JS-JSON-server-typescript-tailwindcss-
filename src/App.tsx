@@ -66,8 +66,14 @@ function App() {
   }, []);
 
   return (
-    <main>
+    <main className="p-4">
+      <h2 className=" text-center text-lg md:text-xl lg:text-3xl font-bold">
+        CRUD Operation for User Data
+      </h2>
       <Form onAdd={handleAdd} editUser={editUser} onUpdate={handleUpdate} />
+      <h3 className=" text-center text-base md:text-lg lg:text-xl font-semibold my-4">
+        List of Users
+      </h3>
       <Table
         userList={allUsers}
         editData={handleUserEdit}
