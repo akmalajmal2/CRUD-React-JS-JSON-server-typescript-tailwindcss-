@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import FormField from "./FromField";
 import Button from "../components/Button";
 
-// const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
-
 interface FormProps {
   onAdd: (user: UserProps) => void;
   onUpdate: (user: UserProps) => void;
